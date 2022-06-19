@@ -19,5 +19,12 @@
 }
 
 .header__mode-switch {
+    display: flex;
+    align-items: center;
+
     padding-right: 80px;
+}
+
+.mode-switch__text {
+    padding-left: 10px;
 }
