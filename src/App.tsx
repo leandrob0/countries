@@ -1,15 +1,14 @@
 import './App.css';
 
 import { useEffect } from "react";
-import { useSelector } from 'react-redux';
-import { RootState } from './store';
+import { useAppSelector } from "./hooks/redux";
 
 import { getAllCountries } from "./services/fetchData";
 
 import Header from './components/Header/Header';
 
 function App() {
-  const mode = useSelector((state: RootState) => state.mode.value);
+  const mode = useAppSelector((state) => state.mode.value);
 
   useEffect(() => {
     getAllCountries()

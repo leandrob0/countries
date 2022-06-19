@@ -4,13 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon as moonDark } from "@fortawesome/free-solid-svg-icons";
 import { faMoon as moonLight } from "@fortawesome/free-regular-svg-icons";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { toggle } from "../../features/modeSlice";
-import { RootState } from "../../store";
 
 const Header = () => {
-  const mode = useSelector((state: RootState) => state.mode.value);
-  const dispatch = useDispatch();
+  const mode = useAppSelector((state) => state.mode.value);
+  const dispatch = useAppDispatch();
 
   const handleSwitch = () => {
     dispatch(toggle());
