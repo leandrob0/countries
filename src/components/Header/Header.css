@@ -25,6 +25,10 @@
     padding-right: 80px;
 }
 
+.header__mode-switch:hover {
+    cursor: pointer;
+}
+
 .mode-switch__text {
     padding-left: 10px;
 }
