@@ -1,3 +1,5 @@
+import './App.css';
+
 import { useEffect } from "react";
 import { getAllCountries } from "./services/fetchData";
 
@@ -10,9 +12,11 @@ function App() {
   }, []);
 
   return (
-    <>
-      <h1>Hola</h1>
-    </>
+    <div id="App" className='light'>
+      <button onClick={() => {
+        document.querySelector('#App')?.classList.toggle('light');
+      }}>Hola</button>
+    </div>
   );
 }
 
