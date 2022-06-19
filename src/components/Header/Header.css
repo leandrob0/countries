@@ -12,3 +12,12 @@
 
     background-color: var(--elements);
 }
+
+.header__title {
+    padding-left: 80px;
+    font-size: 1.5rem;
+}
+
+.header__mode-switch {
+    padding-right: 80px;
+}
