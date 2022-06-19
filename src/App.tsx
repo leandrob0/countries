@@ -3,6 +3,8 @@ import './App.css';
 import { useEffect } from "react";
 import { getAllCountries } from "./services/fetchData";
 
+import Header from './components/Header/Header';
+
 function App() {
 
   useEffect(() => {
@@ -12,10 +14,11 @@ function App() {
   }, []);
 
   return (
-    <div id="App" className='light'>
-      <button onClick={() => {
+    <div id="App" className=''>
+      <Header />
+      {/*<button onClick={() => {
         document.querySelector('#App')?.classList.toggle('light');
-      }}>Hola</button>
+      </div>}}>Hola</button>*/}
     </div>
   );
 }
