@@ -6,6 +6,7 @@ import { useAppSelector } from "./hooks/redux";
 import { getAllCountries } from "./services/fetchData";
 
 import Header from './components/Header/Header';
+import FilterSection from './components/FilterSection/FilterSection';
 
 function App() {
   const mode = useAppSelector((state) => state.mode.value);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div id="App" className={mode === 'dark' ? '' : 'light'}>
       <Header />
+      <FilterSection />
     </div>
   );
 }
