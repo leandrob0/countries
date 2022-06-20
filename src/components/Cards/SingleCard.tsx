@@ -1,4 +1,5 @@
 import { formattedAPIResponse } from "../../types";
+import { formatCapitals } from "../../helpers/formatCapitals";
 
 // create a new interface for prop types
 interface CardProps {
@@ -24,14 +25,11 @@ const SingleCard = ({ country }: CardProps) => {
       </div>
       <div className="card__text-container">
         <p className="card__text-key">Capital:&nbsp;</p>
-        <p className="card__text-capital">
-          {country.capital !== undefined && country.capital.length !== 0
-            ? country.capital.map((capital, index) => {
-                return index + 1 === country.capital.length
-                  ? capital
-                  : capital + ", ";
-              })
-            : "Unknown"}
+        <p
+          className="card__text-capital"
+          title={formatCapitals(country.capital)}
+        >
+          {formatCapitals(country.capital)}
         </p>
       </div>
     </article>
