@@ -12,16 +12,16 @@ const SingleCard = ({country}: CardProps) => {
             <img src={country.flags.png} alt={`${country.name.official} flag.`} className="card__image" />
             <h2>{country.name.common}</h2>
             <div className="card__text-container">
-                <p className="card__text-key">Population:</p>
-                <p>{country.population}</p>
+                <p className="card__text-key">Population:&nbsp;</p>
+                <p>{country.population || 'Unknown'}</p>
             </div>
             <div className="card__text-container">
-                <p className="card__text-key">Region:</p>
-                <p>{country.region}</p>
+                <p className="card__text-key">Region:&nbsp;</p>
+                <p>{country.region || 'Unknown'}</p>
             </div>
             <div className="card__text-container">
-                <p className="card__text-key">Capital:</p>
-                <p>{country.capital}</p>
+                <p className="card__text-key">Capital:&nbsp;</p>
+                <p>{country.capital || 'Unknown'}</p>
             </div>
         </article>
     )
