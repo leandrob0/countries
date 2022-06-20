@@ -3,6 +3,7 @@
     --text: hsl(200, 15%, 8%);
     --input: hsl(0, 0%, 52%);
     --background: hsl(0, 0%, 96%);
+    --shadow: hsl(0, 0%, 88%);
 }
 
 #App {
