@@ -25,12 +25,38 @@
 
 .card {
     background-color: var(--elements);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 260px;
+    font-size: 0.875rem;
 }
 
 .card__image {
     width: 260px;
-    height: 150px;
+    height: 160px;
     
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.card > h2 {
+    padding-left: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card__text-container {
+    padding-left: 20px;
+    display: flex;
+}
+
+.card__text-container > p {
+    margin-bottom: 10px;
+}
+
+.card__text-key {
+    font-weight: 700;
 }
