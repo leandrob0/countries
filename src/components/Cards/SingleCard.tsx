@@ -13,7 +13,7 @@ const SingleCard = ({ country }: CardProps) => {
         alt={`${country.name.official} flag.`}
         className="card__image"
       />
-      <h2>{country.name.common}</h2>
+      <h2 title={country.name.common}>{country.name.common}</h2>
       <div className="card__text-container">
         <p className="card__text-key">Population:&nbsp;</p>
         <p>{country.population || "Unknown"}</p>
