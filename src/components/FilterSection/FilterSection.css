@@ -62,6 +62,8 @@
 }
 
 .filter-region {
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,7 +79,6 @@
 
 .filter-region:hover {
     cursor: pointer;
-    filter: brightness(120%);;
 }
 
 .filter-region__text {
@@ -86,4 +87,41 @@
 
 .filter-region__icon {
     padding-right: 20px;
+}
+
+.filter-options {
+    position: absolute;
+    top: 60px;
+
+    width: inherit;
+
+    background-color: var(--elements);
+    border-radius: 5px;
+
+    font-size: 0.875rem;
+    animation: fadeIn 0.3s;
+}
+
+.filter-options:hover {
+    cursor: default;
+}
+
+.filter-options__text {
+    margin: 0;
+    padding: 10px 0 10px 20px;
+}
+
+.filter-options__text:hover {
+    cursor: pointer;
+    backdrop-filter: brightness(120%);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
