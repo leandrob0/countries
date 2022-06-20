@@ -7,7 +7,11 @@ interface CardProps{
  
 
 const SingleCard = ({country}: CardProps) => {
-    return <h1>{country.name.official}</h1>
+    return (
+        <article className="card">
+            <img src={country.flags.png} alt={`${country.name.official} flag.`} className="card__image" />
+        </article>
+    )
 }
 
 export default SingleCard;

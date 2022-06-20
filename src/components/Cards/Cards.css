@@ -1,6 +1,36 @@
 .cards-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 80px;
 
     background: var(--background);
+
+    margin-top: 45px;
+    padding-left: 80px;
+    padding-right: 65px;
+
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background);
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.card {
+    background-color: var(--elements);
+}
+
+.card__image {
+    width: 260px;
+    height: 150px;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
