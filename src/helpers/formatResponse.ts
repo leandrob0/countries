@@ -1,6 +1,7 @@
 import { formattedAPIResponse } from './../types.d';
 
 export const formatResponse = (countries: Array<any>): formattedAPIResponse[] => {
+  if(countries.length === 0) return [];
   return countries.map((country) => {
     const {
       name,
