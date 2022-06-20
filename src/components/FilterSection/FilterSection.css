@@ -75,6 +75,11 @@
     width: 200px;
 }
 
+.filter-region:hover {
+    cursor: pointer;
+    filter: brightness(120%);;
+}
+
 .filter-region__text {
     padding-left: 20px;
 }
