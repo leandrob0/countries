@@ -8,10 +8,10 @@
 
     margin-top: 45px;
     padding-left: 80px;
-    padding-right: 65px;
+    padding-right: 80px;
 
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: overlay;
 }
 
 ::-webkit-scrollbar {
