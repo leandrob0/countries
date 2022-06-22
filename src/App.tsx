@@ -3,8 +3,8 @@ import './App.css';
 import { useAppSelector } from "./hooks/redux";
 
 import Header from './components/Header/Header';
-import FilterSection from './components/FilterSection/FilterSection';
-import Cards from './components/Cards/Cards';
+import Homepage from './components/Homepage/Homepage';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const mode = useAppSelector((state) => state.mode.value);
@@ -12,8 +12,9 @@ function App() {
   return (
     <div id="App" className={mode === 'dark' ? '' : 'light'}>
       <Header />
-      <FilterSection />
-      <Cards />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
     </div>
   );
 }

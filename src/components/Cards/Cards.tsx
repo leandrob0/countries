@@ -22,7 +22,7 @@ const Cards = () => {
   return (
     <section className="cards-container">
       {loading && <Spinner />}
-      {countries.length === 0 && 'No results found.'}
+      {countries.length === 0 && !loading && 'No results found.'}
       {countries.length > 0 && countries.map(country => <SingleCard key={country.name.official} country={country}/>)}
     </section>
   );
