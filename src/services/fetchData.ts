@@ -1,5 +1,5 @@
 import { formattedAPIResponse } from './../types.d';
-import { formatResponse } from './../helpers/formatResponse';
+import { formatResponse } from './../helpers/formatters';
 
 const baseUrl = 'https://restcountries.com/v3.1/';
 

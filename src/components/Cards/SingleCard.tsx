@@ -1,5 +1,5 @@
 import { formattedAPIResponse } from "../../types";
-import { formatCapitals } from "../../helpers/formatCapitals";
+import { formatCapitals } from "../../helpers/formatters";
 
 // create a new interface for prop types
 interface CardProps {
