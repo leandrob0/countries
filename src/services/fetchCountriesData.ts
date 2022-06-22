@@ -10,3 +10,11 @@ export const getAllCountries = async (): Promise<formattedAPIResponse[]> => {
 
     return formattedResponse;
 }
+
+export const getCountriesByRegion = async (region: string): Promise<formattedAPIResponse[]> => {
+    const data = await fetch(`${baseUrl}region/${region}`);
+    const jsonData = await data.json();
+    const formattedResponse = formatResponse(jsonData);
+
+    return formattedResponse;
+}

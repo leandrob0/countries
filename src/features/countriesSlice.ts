@@ -23,9 +23,6 @@ export const countriesSlice = createSlice({
       state.data = action.payload;
       state.loading = false;
     },
-    resetLoading: (state: countriesState) => {
-      state.loading = true;
-    },
   },
 });
 
