@@ -1,4 +1,4 @@
-import { formatResponse, formatCapitals } from "./formatters";
+import { formatResponse, formatCapitals, formatPopulation } from "./formatters";
 
 describe("Format response function.", () => {
   const preFormattedObj = [
@@ -57,3 +57,17 @@ describe("Format capitals function.", () => {
     expect(formatCapitals([])).toBe("Unknown");
   });
 });
+
+describe("Format population function.", () => {
+  test("Formats a 7 digit number well.", () => {
+    expect(formatPopulation(1231231)).toBe('1.231.231');
+  })
+
+  test("Formats a 6 digit number well.", () => {
+    expect(formatPopulation(123123)).toBe('123.123');
+  })
+
+  test("Returns unkonwn in the case the number is undefined.", () => {
+    expect(formatPopulation(undefined)).toBe('Unknown');
+  })
+})

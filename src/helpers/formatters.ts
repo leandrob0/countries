@@ -50,3 +50,10 @@ export const formatCapitals = (capitals: string[]): string => {
 
   return "Unknown";
 };
+
+export const formatPopulation = (pop: number | undefined): string => {
+
+  if(pop === undefined) return 'Unknown';
+  // Code from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript.
+  return pop.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
