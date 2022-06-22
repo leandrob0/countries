@@ -16,13 +16,14 @@ const Cards = () => {
   useEffect(() => {
     getAllCountries()
       .then((res) => dispatch(setCountries(res)))
-      .catch((err) => console.log(err));
+      .catch(() => dispatch(setCountries([])));
   }, [dispatch]);
 
   return (
     <section className="cards-container">
       {loading && <Spinner />}
-      {countries.map(country => <SingleCard key={country.name.official} country={country}/>)}
+      {countries.length === 0 && 'No results found.'}
+      {countries.length > 0 && countries.map(country => <SingleCard key={country.name.official} country={country}/>)}
     </section>
   );
 };
