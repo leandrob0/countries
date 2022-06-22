@@ -1,21 +1,30 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import {formattedAPIResponse} from '../types';
+import { formattedAPIResponse } from "../types";
 
 export interface countriesState {
-    value: formattedAPIResponse[] | [];
-  }
+  data: formattedAPIResponse[] | [];
+  loading: boolean;
+}
 
 const initialState: countriesState = {
-    value: [],
+  data: [],
+  loading: true,
 };
 
 export const countriesSlice = createSlice({
   name: "countries",
   initialState,
   reducers: {
-    setCountries: (state: countriesState, action: PayloadAction<formattedAPIResponse[]>) => {
-        state.value = action.payload;
+    setCountries: (
+      state: countriesState,
+      action: PayloadAction<formattedAPIResponse[]>
+    ) => {
+      state.data = action.payload;
+      state.loading = false;
+    },
+    resetLoading: (state: countriesState) => {
+      state.loading = true;
     },
   },
 });
