@@ -3,7 +3,7 @@ import './Cards.css';
 import { useEffect } from "react";
 import { setCountries } from "../../features/countriesSlice";
 import { useAppSelector, useAppDispatch } from "../../hooks/redux";
-import { getAllCountries } from "../../services/fetchData";
+import { getAllCountries } from "../../services/fetchCountriesData";
 
 import SingleCard from "./SingleCard";
 
