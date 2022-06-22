@@ -3,16 +3,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import React, { useState } from "react";
 
+import { getCountriesByQuery } from "../../services/fetchCountriesData";
+import { useAppDispatch } from "../../hooks/redux";
+import { setCountries } from "../../features/countriesSlice";
+
 const Search = () => {
   const [country, setCountry] = useState<string>("");
+  const dispatch = useAppDispatch();
 
-  const handleChange = (evt:React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setCountry(evt.target.value);
   }
 
-  const handleSubmit = (evt:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    // Hace algo.
+    const target = evt.target as HTMLFormElement;
+    const inputValue = target['country-search'].value;
+
+    if(inputValue !== undefined && inputValue !== "") {
+      getCountriesByQuery(inputValue)
+        .then(res => dispatch(setCountries(res)))
+        .catch(err => console.log(err));
+    } else {
+      return;
+    }
   }
 
   return (
