@@ -1,5 +1,5 @@
 import { formattedAPIResponse } from "../../types";
-import { formatCapitals } from "../../helpers/formatters";
+import { formatCapitals, formatPopulation } from "../../helpers/formatters";
 
 // create a new interface for prop types
 interface CardProps {
@@ -17,7 +17,7 @@ const SingleCard = ({ country }: CardProps) => {
       <h2 title={country.name.common}>{country.name.common}</h2>
       <div className="card__text-container">
         <p className="card__text-key">Population:&nbsp;</p>
-        <p>{country.population || "Unknown"}</p>
+        <p>{formatPopulation(country.population)}</p>
       </div>
       <div className="card__text-container">
         <p className="card__text-key">Region:&nbsp;</p>
