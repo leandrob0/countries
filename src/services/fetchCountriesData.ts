@@ -20,9 +20,13 @@ export const getCountriesByRegion = async (region: string): Promise<formattedAPI
 }
 
 export const getCountriesByQuery = async (query: string): Promise<formattedAPIResponse[]> => {
-    const data = await fetch(`${baseUrl}name/${query}`);
-    const jsonData = await data.json();
-    const formattedResponse = formatResponse(jsonData);
+    try {
+        const data = await fetch(`${baseUrl}name/${query}`);
+        const jsonData = await data.json();
+        const formattedResponse = formatResponse(jsonData);
 
-    return formattedResponse;
+        return formattedResponse;
+    } catch {
+        return [];
+    }
 }

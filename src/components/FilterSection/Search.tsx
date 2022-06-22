@@ -41,6 +41,7 @@ const Search = () => {
         onChange={handleChange}
         value={country}
         name='country-search'
+        autoComplete="off"
         placeholder="Search for a country..."
         className="search-form__input"
       />
