@@ -6,6 +6,7 @@ import { faMoon as moonLight } from "@fortawesome/free-regular-svg-icons";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { toggle } from "../../features/modeSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const mode = useAppSelector((state) => state.mode.value);
@@ -17,7 +18,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="header__title">Where in the world?</h1>
+      <Link to="/">
+        <h1 className="header__title">Where in the world?</h1>
+      </Link>
       <div className="header__mode-switch" onClick={handleSwitch}>
         <FontAwesomeIcon icon={mode === "dark" ? moonDark : moonLight} />
         <p className="mode-switch__text">Dark mode</p>
