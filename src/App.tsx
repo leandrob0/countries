@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Homepage from './components/Homepage/Homepage';
-import CountryPage from './components/CountryInfo/CountryPage';
+import CountryPage from './components/CountryPage/CountryPage';
 
 function App() {
   const mode = useAppSelector((state) => state.mode.value);
