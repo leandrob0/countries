@@ -7,10 +7,10 @@
     background: var(--background);
 
     margin-top: 45px;
+    padding-bottom: 45px;
     padding-left: 80px;
     padding-right: 80px;
 
-    height: 100vh;
     overflow-y: overlay;
 }
 
