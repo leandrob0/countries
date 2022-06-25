@@ -3,8 +3,8 @@ import { formattedAPIResponse } from "./../types.d";
 export const searchCountry = (
   name: string | undefined,
   countries: formattedAPIResponse[]
-): formattedAPIResponse | [] => {
-  if (name === undefined) return [];
+): formattedAPIResponse | null => {
+  if (name === undefined) return null;
   
   for(let i = 0; i < countries.length; i++) {
     if(countries[i].name.official === name) {
@@ -12,5 +12,5 @@ export const searchCountry = (
     }
   }
 
-  return [];
+  return null;
 };
