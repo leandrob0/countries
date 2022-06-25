@@ -1,10 +1,11 @@
 import './App.css';
 
 import { useAppSelector } from "./hooks/redux";
+import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Homepage from './components/Homepage/Homepage';
-import { Route, Routes } from 'react-router-dom';
+import CountryPage from './components/CountryInfo/CountryPage';
 
 function App() {
   const mode = useAppSelector((state) => state.mode.value);
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/:name" element={<CountryPage />} />
       </Routes>
     </div>
   );
