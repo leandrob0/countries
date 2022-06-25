@@ -1,0 +1,25 @@
+.country-page-container {
+    padding: 160px 80px 45px 80px;
+    background-color: var(--background);
+
+    height: inherit;
+    width: inherit;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 135px;
+    padding: 10px;
+
+    color: var(--text);
+    background-color: var(--elements);
+    box-shadow: 0 0 20px 1px var(--shadow);
+    border-radius: 5px;
+}
+
+.button-container > p {
+    padding-left: 14px;
+}
