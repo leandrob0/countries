@@ -31,7 +31,7 @@ function CountryDetails({ country }: CountryProps) {
         </div>
         <div className="border-countries-container">
           <label className="label-style">Border Countries: </label>
-          {country?.borders.map((country) => <CountryButton country={country}/>)}
+          {country?.borders.map((country) => <CountryButton key={country} country={country}/>)}
         </div>
       </section>
     </main>
