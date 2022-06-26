@@ -78,3 +78,25 @@ export const formatCurrencies = (currencies: object | undefined): string => {
   }
   return "Unknown";
 };
+
+export const formatLanguages = (languages: object | undefined): string => {
+  if (languages !== undefined) {
+    let keys = Object.keys(languages);
+    let keysLength = keys.length;
+    if (keysLength === 1)
+      return languages[keys[0] as keyof typeof languages];
+
+    let formattedText = "";
+
+    for (let i = 0; i < keysLength; i++) {
+      if (i + 1 === keysLength) {
+        formattedText += languages[keys[i] as keyof typeof languages];
+      } else {
+        formattedText +=
+        languages[keys[i] as keyof typeof languages] + ", ";
+      }
+    }
+    return formattedText;
+  }
+  return "Unknown";
+};
