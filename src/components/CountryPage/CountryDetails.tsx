@@ -1,5 +1,6 @@
 import { formatCapitals, formatPopulation, formatCurrencies, formatLanguages } from "../../helpers/formatters";
 import { formattedAPIResponse } from "../../types";
+import CountryButton from "./CountryButton";
 
 import InfoDisplay from "./InfoDisplay";
 
@@ -27,6 +28,10 @@ function CountryDetails({ country }: CountryProps) {
             <InfoDisplay label="Currencies" information={formatCurrencies(country?.currencies)}/>
             <InfoDisplay label="Languages" information={formatLanguages(country?.languages)}/>
           </div>
+        </div>
+        <div className="border-countries-container">
+          <label className="label-style">Border Countries: </label>
+          {country?.borders.map((country) => <CountryButton country={country}/>)}
         </div>
       </section>
     </main>

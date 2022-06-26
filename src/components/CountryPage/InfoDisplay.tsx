@@ -7,7 +7,7 @@ interface InfoDisplayProps {
 function InfoDisplay({label, information}: InfoDisplayProps) {
   return (
     <span className="info-display">
-        <label>{label}:</label>
+        <label className="label-style">{label}:</label>
         <p>{information || "Unknown"}</p>
     </span>
   )
