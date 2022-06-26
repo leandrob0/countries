@@ -23,7 +23,7 @@ function CountryDetails({ country }: CountryProps) {
             <InfoDisplay label="Capital" information={formatCapitals(country?.capital)}/>
           </div>
           <div>
-            <InfoDisplay label="Top Level Domain" information={country?.name.official}/>
+            <InfoDisplay label="Top Level Domain" information={country?.tld.join(', ')}/>
             <InfoDisplay label="Currencies" information={formatCurrencies(country?.currencies)}/>
             <InfoDisplay label="Languages" information={formatLanguages(country?.languages)}/>
           </div>
