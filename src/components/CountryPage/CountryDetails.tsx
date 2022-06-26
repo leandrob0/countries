@@ -1,3 +1,4 @@
+import { formatCapitals, formatPopulation } from "../../helpers/formatters";
 import { formattedAPIResponse } from "../../types";
 
 import InfoDisplay from "./InfoDisplay";
@@ -16,6 +17,10 @@ function CountryDetails({ country }: CountryProps) {
         <div>
           <div>
             <InfoDisplay label="Official name" information={country?.name.official}/>
+            <InfoDisplay label="Population" information={formatPopulation(country?.population)}/>
+            <InfoDisplay label="Region" information={country?.region}/>
+            <InfoDisplay label="Sub region" information={country?.subregion}/>
+            <InfoDisplay label="Capital" information={formatCapitals(country?.capital)}/>
           </div>
           <div>
 

@@ -33,7 +33,7 @@ export const formatResponse = (
   });
 };
 
-export const formatCapitals = (capitals: string[]): string => {
+export const formatCapitals = (capitals: string[] | undefined): string => {
   if (capitals !== undefined) {
     if (capitals.length === 1) return capitals[0];
     else if (capitals.length > 1) {
