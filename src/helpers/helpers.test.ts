@@ -1,4 +1,9 @@
-import { formatResponse, formatCapitals, formatPopulation } from "./formatters";
+import {
+  formatResponse,
+  formatCapitals,
+  formatPopulation,
+  formatCurrencies,
+} from "./formatters";
 
 describe("Format response function.", () => {
   const preFormattedObj = [
@@ -60,14 +65,38 @@ describe("Format capitals function.", () => {
 
 describe("Format population function.", () => {
   test("Formats a 7 digit number well.", () => {
-    expect(formatPopulation(1231231)).toBe('1.231.231');
-  })
+    expect(formatPopulation(1231231)).toBe("1.231.231");
+  });
 
   test("Formats a 6 digit number well.", () => {
-    expect(formatPopulation(123123)).toBe('123.123');
-  })
+    expect(formatPopulation(123123)).toBe("123.123");
+  });
 
   test("Returns unkonwn in the case the number is undefined.", () => {
-    expect(formatPopulation(undefined)).toBe('Unknown');
-  })
-})
+    expect(formatPopulation(undefined)).toBe("Unknown");
+  });
+});
+
+describe("Format currencies function.", () => {
+  test("Formats only one currency well.", () => {
+    expect(
+      formatCurrencies({
+        YER: { name: "Yemeni rial", symbol: "﷼" },
+      })
+    ).toBe("Yemeni rial");
+  });
+
+  test("Formats multiple currencies well.", () => {
+    expect(
+      formatCurrencies({
+        YER: { name: "Yemeni rial", symbol: "﷼" },
+        ARG: { name: "Peso Argentino", symbol: "$"},
+        YER2: { name: "Yemeni rial2", symbol: "﷼" },
+      })
+    ).toBe("Yemeni rial, Peso Argentino, Yemeni rial2");
+  });
+
+  test("Returns unkonwn in the case the currencies is undefined.", () => {
+    expect(formatCurrencies(undefined)).toBe("Unknown");
+  });
+});

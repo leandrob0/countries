@@ -52,8 +52,29 @@ export const formatCapitals = (capitals: string[] | undefined): string => {
 };
 
 export const formatPopulation = (pop: number | undefined): string => {
-
-  if(pop === undefined) return 'Unknown';
+  if (pop === undefined) return "Unknown";
   // Code from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript.
   return pop.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
+};
+
+export const formatCurrencies = (currencies: object | undefined): string => {
+  if (currencies !== undefined) {
+    let keys = Object.keys(currencies);
+    let keysLength = keys.length;
+    if (keysLength === 1)
+      return currencies[keys[0] as keyof typeof currencies]["name"];
+
+    let formattedText = "";
+
+    for (let i = 0; i < keysLength; i++) {
+      if (i + 1 === keysLength) {
+        formattedText += currencies[keys[i] as keyof typeof currencies]["name"];
+      } else {
+        formattedText +=
+          currencies[keys[i] as keyof typeof currencies]["name"] + ", ";
+      }
+    }
+    return formattedText;
+  }
+  return "Unknown";
+};
