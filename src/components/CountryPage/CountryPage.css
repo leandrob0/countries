@@ -94,7 +94,7 @@
     box-shadow: 0 0 20px 1px var(--shadow);
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1399px) {
     :root {
         font-size: 0.75rem;
     }
