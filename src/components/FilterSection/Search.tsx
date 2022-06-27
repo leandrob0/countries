@@ -22,7 +22,8 @@ const Search = () => {
 
     if(inputValue !== undefined && inputValue !== "") {
       getCountriesByQuery(inputValue)
-        .then(res => dispatch(setCountries(res)));
+        .then(res => dispatch(setCountries(res)))
+        .catch(() => console.log('Error'))
     } else {
       return;
     }

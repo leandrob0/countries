@@ -9,10 +9,12 @@ import { getCountryByName } from "../../services/fetchCountriesData";
 import BackButton from "./BackButton";
 import CountryDetails from "./CountryDetails";
 import Spinner from "../Spinner/Spinner";
+import Error from "../Error/Error";
 
 function CountryPage() {
   const [actualCountry, setActualCountry] = useState<formattedAPIResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
   const { name } = useParams();
 
   useEffect(() => {
@@ -21,12 +23,13 @@ function CountryPage() {
         setActualCountry(res);
         setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch(() => setError(true));
   }, [name]);
 
   return (
     <div className="country-page-container">
       <BackButton />
+      {error && <Error />}
       {loading ? <Spinner /> : <CountryDetails country={actualCountry} />}
     </div>
   );
