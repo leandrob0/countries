@@ -14,8 +14,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/responsive-page-using-flexbox-typescript-and-plain-css-1HJ61CD4DC)
+- Live Site URL: [Add live site URL here](https://leandrob0-countries.vercel.app/)
 
 ## My process
 
