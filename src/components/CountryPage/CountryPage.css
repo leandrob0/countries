@@ -6,7 +6,10 @@
     width: inherit;
 
     overflow-y: overlay;
-    overflow-y: hidden;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .button-container {
@@ -28,13 +31,16 @@
 }
 
 .content-country {
+    align-self: center;
+
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 120px;
 
     margin-top: 75px;
+    max-width: 1440px;
 }
 
 .country-image {
@@ -87,3 +93,18 @@
 
     box-shadow: 0 0 20px 1px var(--shadow);
 }
+
+@media (max-width: 1440px) {
+    :root {
+        font-size: 0.75rem;
+    }
+    .content-country {
+      justify-content: center;
+    }
+    .country-page-container {
+        padding: 160px 30px 35px 30px;
+    }
+    .border-countries-container {
+        padding-bottom: 65px;
+    }
+  }

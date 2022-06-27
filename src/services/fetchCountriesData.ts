@@ -30,3 +30,11 @@ export const getCountriesByQuery = async (query: string): Promise<formattedAPIRe
         return [];
     }
 }
+
+export const getCountryByName = async (name: string): Promise<formattedAPIResponse> => {
+    const data = await fetch(`${baseUrl}name/${name}`);
+    const jsonData = await data.json();
+    const formattedResponse = formatResponse(jsonData);
+
+    return formattedResponse[0];
+}
